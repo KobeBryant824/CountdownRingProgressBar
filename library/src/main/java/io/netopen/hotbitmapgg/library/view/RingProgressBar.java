@@ -242,12 +242,12 @@ public class RingProgressBar extends View {
      */
     private void drawProgress(Canvas canvas) {
         //绘制进度 根据设置的样式进行绘制
-        paint.setStrokeWidth(ringWidth);
+        paint.setStrokeWidth(0);//初始时圆弧中心点空白
         paint.setColor(ringProgressColor);
 
-        RectF fillOval = new RectF(ringWidth + padding,
-                ringWidth + padding, 2 * centre - ringWidth - padding,
-                2 * centre - ringWidth - padding);
+        RectF fillOval = new RectF(ringWidth / 2 + padding,
+                ringWidth / 2 + padding, 2 * centre - ringWidth / 2 - padding,
+                2 * centre - ringWidth / 2 - padding);
 
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
